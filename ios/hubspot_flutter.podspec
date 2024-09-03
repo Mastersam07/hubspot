@@ -5,13 +5,13 @@
 Pod::Spec.new do |s|
   s.name             = 'hubspot_flutter'
   s.version          = '0.0.1'
-  s.summary          = 'A new Flutter plugin project.'
+  s.summary          = 'Hubspot mobile chat sdk beta for flutter'
   s.description      = <<-DESC
-A new Flutter plugin project.
+Hubspot mobile chat sdk beta for flutter.
                        DESC
-  s.homepage         = 'http://example.com'
+  s.homepage         = 'http://github.com/shuttlershq/hubspot_flutter'
   s.license          = { :file => '../LICENSE' }
-  s.author           = { 'Your Company' => 'email@example.com' }
+  s.author           = { 'ShuttlersHQ' => 'engr@shuttlers.co' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
