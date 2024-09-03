@@ -50,6 +50,7 @@ android {
     }
 
     dependencies {
+        implementation "com.hubspot.mobilechatsdk:mobile-chat-sdk-android:LATEST_VERSION"
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
     }

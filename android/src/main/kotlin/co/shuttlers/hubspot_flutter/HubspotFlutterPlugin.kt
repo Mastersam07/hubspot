@@ -22,12 +22,50 @@ class HubspotFlutterPlugin: FlutterPlugin, MethodCallHandler {
   }
 
   override fun onMethodCall(call: MethodCall, result: Result) {
-    if (call.method == "getPlatformVersion") {
-      result.success("Android ${android.os.Build.VERSION.RELEASE}")
-    } else {
-      result.notImplemented()
+        when (call.method) {
+            "initialize" -> {
+                val context = flutterPluginBinding.applicationContext
+                HubspotManager.getInstance(context).configure()
+                result.success(null)
+            }
+
+            "openChat" -> {
+                val intent = Intent(context, HubspotWebActivity::class.java)
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+                context.startActivity(intent)
+                result.success(null)
+            }
+            
+            "setUserIdentity" -> {
+                val email = call.argument<String>("email")
+                val identityToken = call.argument<String>("identityToken")
+                if (email != null && identityToken != null) {
+                    HubspotManager.getInstance(context).setUserIdentity(email, identityToken)
+                    result.success(null)
+                } else {
+                    result.error("INVALID_ARGUMENT", "Email or IdentityToken is null", null)
+                }
+            }
+
+            "setChatProperties" -> {
+                val properties = call.argument<Map<String, String>>("properties")
+                if (properties != null) {
+                    HubspotManager.getInstance(context).setChatProperties(properties)
+                    result.success(null)
+                } else {
+                    result.error("INVALID_ARGUMENT", "Properties map is null", null)
+                }
+            }
+
+            "logout" -> {
+                HubspotManager.getInstance(context).logout()
+                result.success(null)
+            }
+
+            // Add more methods as needed
+            else -> result.notImplemented()
+        }
     }
-  }
 
   override fun onDetachedFromEngine(binding: FlutterPlugin.FlutterPluginBinding) {
     channel.setMethodCallHandler(null)

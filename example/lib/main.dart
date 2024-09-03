@@ -1,61 +1,118 @@
 import 'package:flutter/material.dart';
-import 'dart:async';
-
-import 'package:flutter/services.dart';
 import 'package:hubspot_flutter/hubspot_flutter.dart';
 
 void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatefulWidget {
+class MyApp extends StatelessWidget {
   const MyApp({super.key});
-
-  @override
-  State<MyApp> createState() => _MyAppState();
-}
-
-class _MyAppState extends State<MyApp> {
-  String _platformVersion = 'Unknown';
-  final _hubspotFlutterPlugin = HubspotFlutter();
-
-  @override
-  void initState() {
-    super.initState();
-    initPlatformState();
-  }
-
-  // Platform messages are asynchronous, so we initialize in an async method.
-  Future<void> initPlatformState() async {
-    String platformVersion;
-    // Platform messages may fail, so we use a try/catch PlatformException.
-    // We also handle the message potentially returning null.
-    try {
-      platformVersion =
-          await _hubspotFlutterPlugin.getPlatformVersion() ?? 'Unknown platform version';
-    } on PlatformException {
-      platformVersion = 'Failed to get platform version.';
-    }
-
-    // If the widget was removed from the tree while the asynchronous platform
-    // message was in flight, we want to discard the reply rather than calling
-    // setState to update our non-existent appearance.
-    if (!mounted) return;
-
-    setState(() {
-      _platformVersion = platformVersion;
-    });
-  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Plugin example app'),
-        ),
-        body: Center(
-          child: Text('Running on: $_platformVersion\n'),
+      title: 'HubSpot Flutter Demo',
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: const MyHomePage(),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key});
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  @override
+  void initState() {
+    super.initState();
+    initializeHubSpot();
+  }
+
+  Future<void> initializeHubSpot() async {
+    try {
+      await HubspotFlutter.initialize();
+      print("HubSpot SDK initialized.");
+    } catch (e) {
+      print("Error initializing HubSpot SDK: $e");
+    }
+  }
+
+  void openChat() async {
+    try {
+      await HubspotFlutter.openChat();
+      print("Chat opened.");
+    } catch (e) {
+      print("Error opening chat: $e");
+    }
+  }
+
+  void setUserIdentity() async {
+    try {
+      await HubspotFlutter.setUserIdentity(
+          "user@example.com", "identityToken123");
+      print("User identity set.");
+    } catch (e) {
+      print("Error setting user identity: $e");
+    }
+  }
+
+  void setChatProperties() async {
+    try {
+      await HubspotFlutter.setChatProperties({
+        "CameraPermissions": "false",
+        "PhotoPermissions": "false",
+        "NotificationPermissions": "false",
+        "LocationPermissions": "false"
+      });
+      print("Chat properties set.");
+    } catch (e) {
+      print("Error setting chat properties: $e");
+    }
+  }
+
+  void logout() async {
+    try {
+      await HubspotFlutter.logout();
+      print("Logged out.");
+    } catch (e) {
+      print("Error during logout: $e");
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("HubSpot Flutter Demo"),
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            ElevatedButton(
+              onPressed: openChat,
+              child: const Text("Open Chat"),
+            ),
+            ElevatedButton(
+              onPressed: setUserIdentity,
+              child: const Text("Set User Identity"),
+            ),
+            ElevatedButton(
+              onPressed: setChatProperties,
+              child: const Text("Set Chat Properties"),
+            ),
+            ElevatedButton(
+              onPressed: logout,
+              child: const Text("Logout"),
+            ),
+          ],
         ),
       ),
     );
