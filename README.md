@@ -14,7 +14,7 @@ dependencies:
     sdk: flutter
   hubspot_flutter:
     git:
-      url: https://github.com/your-repo/hubspot_flutter.git
+      url: https://github.com/shuttlershq/hubspot_flutter.git
       ref: dev
 ```
 
