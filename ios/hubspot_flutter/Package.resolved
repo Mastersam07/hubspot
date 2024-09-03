@@ -1,0 +1,14 @@
+{
+  "pins" : [
+    {
+      "identity" : "mobile-chat-sdk-ios",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/HubSpot/mobile-chat-sdk-ios",
+      "state" : {
+        "revision" : "d90077cbad3e750a6a403d40da7bcc31677575d4",
+        "version" : "1.0.3"
+      }
+    }
+  ],
+  "version" : 2
+}

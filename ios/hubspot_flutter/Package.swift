@@ -12,13 +12,13 @@ let package = Package(
         // If the plugin name contains "_", replace with "-" for the library name.
         .library(name: "hubspot-flutter", targets: ["hubspot_flutter"])
     ],
-    dependencies: [],
+    dependencies: [
+        .package(url: "https://github.com/HubSpot/mobile-chat-sdk-ios", .upToNextMajor(from: "1.0.3")),
+    ],
     targets: [
         .target(
             name: "hubspot_flutter",
-            dependencies: [
-                .package(url: "https://github.com/HubSpot/mobile-chat-sdk-ios", .upToNextMajor(from: "1.0.3")),
-            ],
+            dependencies: [],
             resources: [
                 // TODO: If your plugin requires a privacy manifest
                 // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
