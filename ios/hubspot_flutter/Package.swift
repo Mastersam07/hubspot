@@ -16,7 +16,9 @@ let package = Package(
     targets: [
         .target(
             name: "hubspot_flutter",
-            dependencies: [],
+            dependencies: [
+                .package(url: "https://github.com/HubSpot/mobile-chat-sdk-ios", .upToNextMajor(from: "1.0.3")),
+            ],
             resources: [
                 // TODO: If your plugin requires a privacy manifest
                 // (e.g. if it uses any required reason APIs), update the PrivacyInfo.xcprivacy file
