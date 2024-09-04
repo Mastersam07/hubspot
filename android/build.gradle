@@ -2,7 +2,7 @@ group = "co.shuttlers.hubspot_flutter"
 version = "1.0-SNAPSHOT"
 
 buildscript {
-    ext.kotlin_version = "1.7.10"
+    ext.kotlin_version = "1.9.0"
     repositories {
         google()
         mavenCentral()
@@ -50,7 +50,7 @@ android {
     }
 
     dependencies {
-        implementation "com.hubspot.mobilechatsdk:mobile-chat-sdk-android:LATEST_VERSION"
+        implementation "com.hubspot.mobilechatsdk:mobile-chat-sdk-android:1.0.3"
         testImplementation("org.jetbrains.kotlin:kotlin-test")
         testImplementation("org.mockito:mockito-core:5.0.0")
     }
