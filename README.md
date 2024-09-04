@@ -28,6 +28,15 @@ dependencies:
 - Ensure your minSdkVersion is set to 21 or higher in your android/app/build.gradle file.
 - Place your google-services.json in the android/app/ directory.
 - Place your hubspot-info.json in the android/app/src/main/assets/ directory.
+- **Update the `AndroidManifest.xml`**:
+> In your app’s `AndroidManifest.xml` file, ensure that you add the following line in the `<application>` tag to apply the appropriate theme.
+> You can also specify your custom app theme here
+```xml
+<application
+    android:theme="@style/Theme.AppCompat.Light"
+    ... >
+```
+
 
 
 ## Usage
@@ -83,3 +92,13 @@ Refer to the example directory for a complete implementation example.
 
 ## Contributing
 Feel free to submit issues and pull requests for improvements. Contributions to enhance the plugin's functionality are welcome.
+
+# Warning
+
+```sh
+/.../AndroidManifest.xml Error:
+	uses-sdk:minSdkVersion 21 cannot be smaller than version 26 declared in library [com.hubspot.mobilechatsdk:mobile-chat-sdk-android:1.0.3] /Users/codefarmer/.gradle/caches/transforms-3/cc158e89eb26b58120b42c3d31b601f0/transformed/jetified-mobile-chat-sdk-android-1.0.3/AndroidManifest.xml as the library might be using APIs not available in 21
+	Suggestion: use a compatible library with a minSdk of at most 21,
+		or increase this project's minSdk version to at least 26,
+		or use tools:overrideLibrary="com.hubspot.mobilesdk" to force usage (may lead to runtime failures)
+```

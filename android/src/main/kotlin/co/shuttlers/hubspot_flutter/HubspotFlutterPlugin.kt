@@ -2,6 +2,11 @@ package co.shuttlers.hubspot_flutter
 
 import androidx.annotation.NonNull
 
+import android.content.Context
+import android.content.Intent
+import com.hubspot.mobilesdk.HubspotManager
+import com.hubspot.mobilesdk.HubspotWebActivity
+
 import io.flutter.embedding.engine.plugins.FlutterPlugin
 import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
@@ -15,16 +20,17 @@ class HubspotFlutterPlugin: FlutterPlugin, MethodCallHandler {
   /// This local reference serves to register the plugin with the Flutter Engine and unregister it
   /// when the Flutter Engine is detached from the Activity
   private lateinit var channel : MethodChannel
+  private lateinit var context: Context
 
   override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
     channel = MethodChannel(flutterPluginBinding.binaryMessenger, "hubspot_flutter")
     channel.setMethodCallHandler(this)
+    context = flutterPluginBinding.applicationContext
   }
 
   override fun onMethodCall(call: MethodCall, result: Result) {
         when (call.method) {
             "initialize" -> {
-                val context = flutterPluginBinding.applicationContext
                 HubspotManager.getInstance(context).configure()
                 result.success(null)
             }
@@ -57,10 +63,10 @@ class HubspotFlutterPlugin: FlutterPlugin, MethodCallHandler {
                 }
             }
 
-            "logout" -> {
-                HubspotManager.getInstance(context).logout()
-                result.success(null)
-            }
+//            "logout" -> {
+//                HubspotManager.getInstance(context).logout()
+//                result.success(null)
+//            }
 
             // Add more methods as needed
             else -> result.notImplemented()
