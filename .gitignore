@@ -27,3 +27,7 @@ migrate_working_dir/
 **/doc/api/
 .dart_tool/
 build/
+
+# Ignore HubSpot configuration files
+ios/Runner/HubSpot-Info.plist
+android/app/src/main/assets/hubspot-info.json
