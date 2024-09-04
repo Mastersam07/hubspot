@@ -1,5 +1,6 @@
 import Flutter
-import UIKit
+import SwiftUI
+import HubspotMobileSDK
 
 public class HubspotFlutterPlugin: NSObject, FlutterPlugin {
   public static func register(with registrar: FlutterPluginRegistrar) {
