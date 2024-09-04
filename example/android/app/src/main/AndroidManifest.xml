@@ -2,6 +2,7 @@
     <application
         android:label="hubspot_flutter_example"
         android:name="${applicationName}"
+        android:theme="@style/Theme.AppCompat.Light"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"
