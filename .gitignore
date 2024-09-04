@@ -29,5 +29,5 @@ migrate_working_dir/
 build/
 
 # Ignore HubSpot configuration files
-ios/Runner/HubSpot-Info.plist
-android/app/src/main/assets/hubspot-info.json
+example/ios/Runner/HubSpot-Info.plist
+example/android/app/src/main/assets/hubspot-info.json
