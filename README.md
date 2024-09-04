@@ -4,6 +4,10 @@ The `hubspot_flutter` plugin allows you to integrate HubSpot's mobile chat SDK i
 
 ## Installation
 
+### Known Issues
+
+- **iOS**: iOS support is currently being implemented. The plugin only supports Android for now.
+
 ### 1. Add the Dependency
 
 Add `hubspot_flutter` to your `pubspec.yaml` file:
