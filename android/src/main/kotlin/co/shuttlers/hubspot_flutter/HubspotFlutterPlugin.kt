@@ -12,6 +12,9 @@ import io.flutter.plugin.common.MethodCall
 import io.flutter.plugin.common.MethodChannel
 import io.flutter.plugin.common.MethodChannel.MethodCallHandler
 import io.flutter.plugin.common.MethodChannel.Result
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 
 /** HubspotFlutterPlugin */
 class HubspotFlutterPlugin: FlutterPlugin, MethodCallHandler {
@@ -63,10 +66,17 @@ class HubspotFlutterPlugin: FlutterPlugin, MethodCallHandler {
                 }
             }
 
-//            "logout" -> {
-//                HubspotManager.getInstance(context).logout()
-//                result.success(null)
-//            }
+            "logout" -> {
+                // Launch a coroutine to call the suspend function
+                GlobalScope.launch(Dispatchers.Main) {
+                    try {
+                        HubspotManager.getInstance(context).logout()
+                        result.success(null)
+                    } catch (e: Exception) {
+                        result.error("LOGOUT_ERROR", "Failed to logout: ${e.localizedMessage}", null)
+                    }
+                }
+            }
 
             // Add more methods as needed
             else -> result.notImplemented()
