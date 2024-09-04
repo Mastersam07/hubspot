@@ -29,7 +29,7 @@ dependencies:
 
 ### 3. Android Setup
 
-- Ensure your minSdkVersion is set to 21 or higher in your android/app/build.gradle file.
+- Ensure your minSdkVersion is set to 26 or higher in your android/app/build.gradle file.
 - Place your google-services.json in the android/app/ directory.
 - Place your hubspot-info.json in the android/app/src/main/assets/ directory.
 - **Update the `AndroidManifest.xml`**:
