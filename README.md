@@ -6,7 +6,11 @@ The `hubspot_flutter` plugin allows you to integrate HubSpot's mobile chat SDK i
 
 ### Known Issues
 
-- **iOS**: iOS support is currently being implemented. The plugin only supports Android for now.
+> ### Warning
+>
+>Flutter is migrating to Swift Package Manager to manage iOS and macOS native dependencies. Flutter's support of Swift Package Manager is under development. The implementation might change in the future. Swift Package Manager support is only available with flutter on the main channel.
+>
+> iOS support should only be used with flutter on the main channel.
 
 ### 1. Add the Dependency
 
@@ -24,8 +28,19 @@ dependencies:
 
 ### 2. iOS Setup
 
-- Make sure your iOS deployment target is set to 11.0 or higher in your ios/Podfile.
+- Make sure your iOS deployment target is set to 15.0 or higher in your ios/Podfile.
 - Add the HubSpot-Info.plist file to your iOS project under ios/Runner.
+
+#### Linking the Hubspot-Info.plist File in Xcode
+
+- 1. Open your project /ios/Runner.xcworkspace in Xcode
+```sh
+open ./ios/Runner.xcworkspace
+```
+- 2. In the Xcode Project Navigator, right-click on the Runner folder and select Add Files to "Runner"....
+- 3. Add the Hubspot-Info.plist file if it isn’t already present.
+- 4. In the right-hand pane, under Target Membership, make sure that the Runner target is checked to ensure the file is linked properly.
+
 
 ### 3. Android Setup
 

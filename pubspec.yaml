@@ -25,7 +25,6 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter:
-  disable-swift-package-manager: true
   plugin:
     platforms:
       android:
@@ -33,3 +32,4 @@ flutter:
         pluginClass: HubspotFlutterPlugin
       ios:
         pluginClass: HubspotFlutterPlugin
+        disable-swift-package-manager: false
