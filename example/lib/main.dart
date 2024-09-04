@@ -93,26 +93,28 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       body: Padding(
         padding: const EdgeInsets.all(16.0),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            ElevatedButton(
-              onPressed: openChat,
-              child: const Text("Open Chat"),
-            ),
-            ElevatedButton(
-              onPressed: setUserIdentity,
-              child: const Text("Set User Identity"),
-            ),
-            ElevatedButton(
-              onPressed: setChatProperties,
-              child: const Text("Set Chat Properties"),
-            ),
-            ElevatedButton(
-              onPressed: logout,
-              child: const Text("Logout"),
-            ),
-          ],
+        child: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              ElevatedButton(
+                onPressed: openChat,
+                child: const Text("Open Chat"),
+              ),
+              ElevatedButton(
+                onPressed: setUserIdentity,
+                child: const Text("Set User Identity"),
+              ),
+              ElevatedButton(
+                onPressed: setChatProperties,
+                child: const Text("Set Chat Properties"),
+              ),
+              ElevatedButton(
+                onPressed: logout,
+                child: const Text("Logout"),
+              ),
+            ],
+          ),
         ),
       ),
     );
