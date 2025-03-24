@@ -1,6 +1,6 @@
-# hubspot_flutter_example
+# hubspot_example
 
-Demonstrates how to use the hubspot_flutter plugin.
+Demonstrates how to use the hubspot plugin.
 
 ## Getting Started
 

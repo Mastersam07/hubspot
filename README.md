@@ -1,28 +1,20 @@
 # HubSpot Flutter Plugin
 
-The `hubspot_flutter` plugin allows you to integrate HubSpot's mobile chat SDK into your Flutter app, enabling real-time, in-app customer support for both Android and iOS.
+The `hubspot` plugin allows you to integrate HubSpot's mobile chat SDK into your Flutter app, enabling real-time, in-app customer support for both Android and iOS.
 
 ## Installation
 
-### Known Issues
-
-> ### Warning
->
->Flutter is migrating to Swift Package Manager to manage iOS and macOS native dependencies. Flutter's support of Swift Package Manager is under development. The implementation might change in the future. Swift Package Manager support is only available with flutter on the main channel.
->
-> iOS support should only be used with flutter on the main channel.
-
 ### 1. Add the Dependency
 
-Add `hubspot_flutter` to your `pubspec.yaml` file:
+Add `hubspot` to your `pubspec.yaml` file:
 
 ```yaml
 dependencies:
   flutter:
     sdk: flutter
-  hubspot_flutter:
+  hubspot:
     git:
-      url: https://github.com/mastersam07/hubspot_flutter.git
+      url: https://github.com/mastersam07/hubspot.git
       ref: dev
 ```
 
@@ -56,8 +48,6 @@ open ./ios/Runner.xcworkspace
     ... >
 ```
 
-
-
 ## Usage
 
 ### Initialize the SDK
@@ -65,7 +55,7 @@ open ./ios/Runner.xcworkspace
 Before using any chat functionality, initialize the SDK:
 
 ```dart
-import 'package:hubspot_flutter/hubspot_flutter.dart';
+import 'package:hubspot/hubspot.dart';
 
 await HubspotFlutter.initialize();
 ```

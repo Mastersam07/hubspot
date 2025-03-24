@@ -1,4 +1,4 @@
-package co.shuttlers.hubspot_flutter
+package tech.mastersam.hubspot
 
 import androidx.annotation.NonNull
 
@@ -26,7 +26,7 @@ class HubspotFlutterPlugin: FlutterPlugin, MethodCallHandler {
   private lateinit var context: Context
 
   override fun onAttachedToEngine(flutterPluginBinding: FlutterPlugin.FlutterPluginBinding) {
-    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "hubspot_flutter")
+    channel = MethodChannel(flutterPluginBinding.binaryMessenger, "hubspot")
     channel.setMethodCallHandler(this)
     context = flutterPluginBinding.applicationContext
   }

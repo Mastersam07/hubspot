@@ -31,3 +31,4 @@ build/
 # Ignore HubSpot configuration files
 example/ios/Runner/HubSpot-Info.plist
 example/android/app/src/main/assets/hubspot-info.json
+*.cxx

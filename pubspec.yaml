@@ -1,10 +1,10 @@
-name: hubspot_flutter
+name: hubspot
 description: "A new Flutter plugin project."
-version: 0.0.1
-homepage: https://github.com/shuttlershq/hubspot_flutter
-repository: https://github.com/shuttlershq/hubspot_flutter
-issue_tracker: https://github.com/shuttlershq/hubspot_flutter/issues
-documentation: https://github.com/shuttlershq/hubspot_flutter/blob/dev/README.md
+version: 0.1.0
+homepage: https://github.com/mastersam/hubspot
+repository: https://github.com/mastersam/hubspot
+issue_tracker: https://github.com/mastersam/hubspot/issues
+documentation: https://github.com/mastersam/hubspot/blob/dev/README.md
 topics:
   - hubspot
   - support
@@ -12,7 +12,7 @@ topics:
 
 environment:
   sdk: '>=3.0.0 <4.0.0'
-  flutter: '>=3.0.0'
+  flutter: '>=3.24.0'
 
 dependencies:
   flutter:
@@ -25,11 +25,12 @@ dev_dependencies:
   flutter_lints: ^4.0.0
 
 flutter:
+  disable-swift-package-manager: false
   plugin:
     platforms:
       android:
-        package: co.shuttlers.hubspot_flutter
-        pluginClass: HubspotFlutterPlugin
+        package: tech.mastersam.hubspot
+        pluginClass: HubspotPlugin
       ios:
-        pluginClass: HubspotFlutterPlugin
+        pluginClass: HubspotPlugin
         disable-swift-package-manager: false

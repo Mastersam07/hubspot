@@ -3,7 +3,7 @@ import UIKit
 import XCTest
 
 
-@testable import hubspot_flutter
+@testable import hubspot
 
 // This demonstrates a simple unit test of the Swift portion of this plugin's implementation.
 //

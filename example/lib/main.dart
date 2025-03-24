@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:hubspot_flutter/hubspot_flutter.dart';
+import 'package:hubspot/hubspot.dart';
 
 void main() {
   runApp(const MyApp());
@@ -24,10 +24,10 @@ class MyHomePage extends StatefulWidget {
   const MyHomePage({super.key});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  MyHomePageState createState() => MyHomePageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class MyHomePageState extends State<MyHomePage> {
   @override
   void initState() {
     super.initState();
@@ -36,52 +36,52 @@ class _MyHomePageState extends State<MyHomePage> {
 
   Future<void> initializeHubSpot() async {
     try {
-      await HubspotFlutter.initialize();
-      print("HubSpot SDK initialized.");
+      await Hubspot.initialize();
+      debugPrint("HubSpot SDK initialized.");
     } catch (e) {
-      print("Error initializing HubSpot SDK: $e");
+      debugPrint("Error initializing HubSpot SDK: $e");
     }
   }
 
   void openChat() async {
     try {
-      await HubspotFlutter.openChat();
-      print("Chat opened.");
+      await Hubspot.openChat();
+      debugPrint("Chat opened.");
     } catch (e) {
-      print("Error opening chat: $e");
+      debugPrint("Error opening chat: $e");
     }
   }
 
   void setUserIdentity() async {
     try {
-      await HubspotFlutter.setUserIdentity(
+      await Hubspot.setUserIdentity(
           "user@example.com", "identityToken123");
-      print("User identity set.");
+      debugPrint("User identity set.");
     } catch (e) {
-      print("Error setting user identity: $e");
+      debugPrint("Error setting user identity: $e");
     }
   }
 
   void setChatProperties() async {
     try {
-      await HubspotFlutter.setChatProperties({
+      await Hubspot.setChatProperties({
         "CameraPermissions": "false",
         "PhotoPermissions": "false",
         "NotificationPermissions": "false",
         "LocationPermissions": "false"
       });
-      print("Chat properties set.");
+      debugPrint("Chat properties set.");
     } catch (e) {
-      print("Error setting chat properties: $e");
+      debugPrint("Error setting chat properties: $e");
     }
   }
 
   void logout() async {
     try {
-      await HubspotFlutter.logout();
-      print("Logged out.");
+      await Hubspot.logout();
+      debugPrint("Logged out.");
     } catch (e) {
-      print("Error during logout: $e");
+      debugPrint("Error during logout: $e");
     }
   }
 

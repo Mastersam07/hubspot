@@ -6,6 +6,6 @@
 
 ## Unreleased
 
-* Initial release of `hubspot_flutter`.
+* Initial release of `hubspot`.
 * Basic features for initializing HubSpot SDK, opening the chat view, setting user identity, setting chat properties, and logging out (Android only).
 * **iOS** support is not yet available.

@@ -2,25 +2,25 @@
 import PackageDescription
 
 let package = Package(
-    name: "hubspot_flutter",
+    name: "hubspot",
     platforms: [
         .iOS("15.0")
     ],
     products: [
         // If the plugin name contains "_", replace with "-" for the library name.
-        .library(name: "hubspot-flutter", targets: ["hubspot_flutter"])
+        .library(name: "hubspot", targets: ["hubspot"])
     ],
     dependencies: [
-        .package(url: "https://github.com/HubSpot/mobile-chat-sdk-ios", .upToNextMajor(from: "1.0.3"))
+        .package(url: "https://github.com/HubSpot/mobile-chat-sdk-ios", .upToNextMajor(from: "1.0.5"))
     ],
     targets: [
         .target(
-            name: "hubspot_flutter",
+            name: "hubspot",
             dependencies: [
                 // Link the HubSpot SDK product
                 .product(name: "HubspotMobileSDK", package: "mobile-chat-sdk-ios")
             ],
-            path: "Sources/hubspot_flutter",  // Ensure that your Swift files are in this directory
+            path: "Sources/hubspot",  // Ensure that your Swift files are in this directory
             resources: [
                 // If your plugin requires any resources like a privacy manifest, add it here
                 // Uncomment the following line if you add PrivacyInfo.xcprivacy

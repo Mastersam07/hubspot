@@ -1,4 +1,4 @@
-group = "co.shuttlers.hubspot_flutter"
+group = "tech.mastersam.hubspot"
 version = "1.0-SNAPSHOT"
 
 buildscript {
@@ -26,7 +26,7 @@ apply plugin: "kotlin-android"
 
 android {
     if (project.android.hasProperty("namespace")) {
-        namespace = "co.shuttlers.hubspot_flutter"
+        namespace = "tech.mastersam.hubspot"
     }
 
     compileSdk = 34
@@ -50,7 +50,7 @@ android {
     }
 
     dependencies {
-        implementation "com.hubspot.mobilechatsdk:mobile-chat-sdk-android:1.0.3"
+        implementation "com.hubspot.mobilechatsdk:mobile-chat-sdk-android:1.0.4"
         implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.1"
         implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.1"
         testImplementation("org.jetbrains.kotlin:kotlin-test")

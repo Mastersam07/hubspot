@@ -1,9 +1,16 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/services.dart';
 
-class HubspotFlutter {
-  static const MethodChannel _channel = MethodChannel('hubspot_flutter');
+class Hubspot {
+  static const MethodChannel _channel = MethodChannel('hubspot');
+  static const MethodChannel _logger = MethodChannel('hubspot_logs');
 
   static Future<void> initialize() async {
+    _logger.setMethodCallHandler((call) async {
+      if (call.method == 'log') {
+        debugPrint('[HubSpot] ${call.arguments}');
+      }
+    });
     await _channel.invokeMethod('initialize');
   }
 

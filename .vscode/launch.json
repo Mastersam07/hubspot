@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "hubspot_flutter",
+            "name": "hubspot",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "hubspot_flutter (profile mode)",
+            "name": "hubspot (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "hubspot_flutter (release mode)",
+            "name": "hubspot (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"
