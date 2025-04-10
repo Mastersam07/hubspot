@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- WebView Colors -->
+    <color name="hubspot_background">#FFFFFF</color>
+    <color name="hubspot_status_bar">#000000</color>
+    <color name="hubspot_navigation_bar">#000000</color>
+    
+    <!-- Text Colors -->
+    <color name="hubspot_text_primary">#000000</color>
+    <color name="hubspot_text_secondary">#666666</color>
+    
+    <!-- UI Elements -->
+    <color name="hubspot_button_background">#FF7A59</color>
+    <color name="hubspot_button_text">#FFFFFF</color>
+    <color name="hubspot_input_background">#F5F5F5</color>
+    <color name="hubspot_input_text">#000000</color>
+</resources> 

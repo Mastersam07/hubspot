@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.HubspotDialog" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowIsTranslucent">true</item>
+        <item name="android:windowBackground">@android:color/transparent</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+    </style>
+
+    <style name="Theme.HubspotWeb" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Window styling -->
+        <item name="android:windowBackground">@color/hubspot_background</item>
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+        <!-- <item name="android:windowLayoutInDisplayCutoutMode">shortEdges</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:windowTranslucentNavigation">true</item> -->
+        
+        <!-- Status and navigation bar -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        
+        <!-- WebView specific -->
+        <item name="android:colorBackground">@color/hubspot_background</item>
+        <item name="android:textColorPrimary">@color/hubspot_text_primary</item>
+        <item name="android:textColorSecondary">@color/hubspot_text_secondary</item>
+        
+        <!-- WebView settings -->
+        <item name="android:windowSoftInputMode">adjustResize</item>
+    </style>
+</resources> 
